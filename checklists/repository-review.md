@@ -10,6 +10,9 @@ Use this checklist ad hoc or whenever a repository changes materially.
 - [ ] Treat missing evidence as unknown, not compliant or disabled.
 - [ ] Confirm intentional differences have a nearby exception annotation.
 - [ ] Confirm copied standards content still references its standard ID.
+- [ ] Confirm root `AGENTS.md` exists and contains shared agent guidance.
+- [ ] Confirm root `CLAUDE.md` exists, its first line is exactly `@AGENTS.md`,
+  and any remaining content is only Claude-specific guidance.
 
 
 ## Act
