@@ -12,6 +12,7 @@ terminal UI.
 - Go toolchain
 - build and quality
 - GitHub security
+- GitHub pull requests
 - HEAD-only distribution
 - documentation
 
