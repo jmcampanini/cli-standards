@@ -5,6 +5,7 @@ Concise standards and known-good patterns for Go CLIs.
 This repository is a living document. It has no standards release process,
 version matrix, or registry of adopting repositories.
 
+
 ## How to use it
 
 1. Read the standards that apply to the CLI.
@@ -20,6 +21,7 @@ version matrix, or registry of adopting repositories.
 If the standard itself is wrong, change this repository. If one CLI is wrong,
 change that CLI.
 
+
 ## Principles
 
 - Prefer simple local code over premature shared infrastructure.
@@ -27,6 +29,7 @@ change that CLI.
 - Human-readable text is the source of truth.
 - Group issues by coherent change and reuse existing issues when practical.
 - Add process only after a demonstrated need.
+
 
 ## Catalog
 

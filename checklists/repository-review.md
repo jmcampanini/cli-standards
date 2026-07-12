@@ -2,6 +2,7 @@
 
 Use this checklist ad hoc or whenever a repository changes materially.
 
+
 ## Review
 
 - [ ] Identify which standards apply.
@@ -10,6 +11,7 @@ Use this checklist ad hoc or whenever a repository changes materially.
 - [ ] Confirm intentional differences have a nearby exception annotation.
 - [ ] Confirm copied standards content still references its standard ID.
 
+
 ## Act
 
 - [ ] Group related drift into one coherent change when practical.
@@ -17,6 +19,7 @@ Use this checklist ad hoc or whenever a repository changes materially.
 - [ ] File unintended drift in the affected repository.
 - [ ] Change `cli-standards` only when the standard itself should change.
 - [ ] Do not add the adopting repository to a central registry.
+
 
 ## Finish
 

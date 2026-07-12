@@ -1,11 +1,13 @@
 # Shared components
 
+
 ## CLI-SHARED-001: extraction threshold
 
 Share implementation only when behavior is repeated, stable, nontrivial, and
 cheaper to coordinate centrally than locally.
 
 A common policy does not require a common package.
+
 
 ## CLI-SHARED-002: config reporting
 
@@ -18,10 +20,12 @@ sensitive.
 
 Design the API in an implementation issue before coding it.
 
+
 ## CLI-SHARED-003: local implementation defaults
 
 Keep application themes, Cobra command wiring, executable layout, and domain
 behavior local unless repeated evidence supports extraction.
+
 
 ## CLI-SHARED-004: shared infrastructure
 

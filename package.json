@@ -1,0 +1,11 @@
+{
+  "name": "cli-standards",
+  "private": true,
+  "scripts": {
+    "check": "npm run lint:markdown",
+    "lint:markdown": "markdownlint-cli2 \"**/*.md\""
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "0.23.0"
+  }
+}

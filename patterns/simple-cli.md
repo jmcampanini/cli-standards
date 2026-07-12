@@ -3,6 +3,7 @@
 Use this pattern for a focused CLI with no configuration files and no full-screen
 terminal UI.
 
+
 ## Apply
 
 - repository layout
@@ -14,6 +15,7 @@ terminal UI.
 - HEAD-only distribution
 - documentation
 
+
 ## Do not add by default
 
 - configuration files
@@ -21,6 +23,7 @@ terminal UI.
 - provenance reporting
 - theme configuration
 - a shared runtime framework
+
 
 ## Known-good shape
 

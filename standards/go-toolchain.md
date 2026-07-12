@@ -1,10 +1,12 @@
 # Go toolchain
 
+
 ## CLI-GO-001: supported version
 
 The current patched Go release is the minimum supported version.
 
 Use `go.mod` as the version source for local builds and CI.
+
 
 ## CLI-GO-002: automated updates
 
@@ -24,6 +26,7 @@ Start with [`examples/workflows/update-go.yml`](../examples/workflows/update-go.
 The example uses a fine-grained `GO_UPDATE_TOKEN` limited to contents and pull
 requests for the adopting repository. Using a separate token allows the pull
 request to trigger the repository's normal required workflows.
+
 
 ## CLI-GO-003: workflow permissions
 

@@ -3,6 +3,7 @@
 Use this pattern when a CLI loads configuration from files, environment, or
 flags.
 
+
 ## Load
 
 1. define application defaults
@@ -14,6 +15,7 @@ flags.
 
 Use a required loader for an explicit `--config` path.
 
+
 ## Report
 
 The default config command emits valid redirectable configuration and a concise
@@ -24,10 +26,12 @@ report.
 
 Redact sensitive values before formatting either report.
 
+
 ## Profiles
 
 Validate the final profile identifiers after all layers and before filesystem or
 ignore-rule use.
+
 
 ## Verification
 

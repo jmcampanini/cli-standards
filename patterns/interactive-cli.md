@@ -3,6 +3,7 @@
 Use this pattern for a full-screen TUI, prompt flow, or command that owns terminal
 state.
 
+
 ## Capability checks
 
 Check the capability actually required:
@@ -15,6 +16,7 @@ Check the capability actually required:
 
 Do not treat those capabilities as interchangeable.
 
+
 ## Noninteractive behavior
 
 Keep help, version, configuration inspection, and documentation usable without
@@ -22,10 +24,12 @@ an interactive terminal when practical.
 
 Interactive-only commands fail with a concise explanation and recovery path.
 
+
 ## Styling
 
 Follow `CLI-OUTPUT-001` through `CLI-OUTPUT-005`. Machine-readable output stays
 plain. Command-specific exceptions are documented and annotated.
+
 
 ## External prerequisites
 
