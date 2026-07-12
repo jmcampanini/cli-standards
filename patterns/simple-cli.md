@@ -1,7 +1,6 @@
 # Pattern: simple CLI
 
-Use this pattern for a focused CLI with no configuration files and no full-screen
-terminal UI.
+Use this pattern for a focused CLI with no configuration files and no full-screen terminal UI.
 
 
 ## Apply
