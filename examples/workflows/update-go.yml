@@ -1,0 +1,79 @@
+name: Update Go
+
+on:
+  schedule:
+    - cron: "17 10 * * 1"
+  workflow_dispatch:
+
+concurrency:
+  group: update-go
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Go from go.mod
+        uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Update Go
+        run: |
+          go get go@latest
+          go mod tidy
+
+      - name: Verify
+        run: make check
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if git diff --quiet -- go.mod go.sum; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # The fine-grained token lets the resulting pull request trigger normal
+      # pull_request workflows, which changes made with GITHUB_TOKEN do not do.
+      - name: Open or refresh pull request
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GO_UPDATE_TOKEN }}
+        run: |
+          branch="automation/update-go"
+          expected="$(git ls-remote --heads origin "refs/heads/$branch" | awk '{print $1}')"
+          version="$(go env GOVERSION)"
+
+          gh auth setup-git
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add go.mod go.sum
+          git commit -m "build: update Go to ${version#go}"
+
+          if [ -n "$expected" ]; then
+            git push origin "HEAD:refs/heads/$branch" \
+              --force-with-lease="refs/heads/$branch:$expected"
+          else
+            git push --set-upstream origin "$branch"
+          fi
+
+          if [ -z "$(gh pr list --head "$branch" --state open --json url --jq '.[0].url')" ]; then
+            gh pr create \
+              --base main \
+              --head "$branch" \
+              --title "build: update Go to ${version#go}" \
+              --body "Automated patched Go update. The scheduled workflow ran go mod tidy and make check before opening this pull request."
+          fi
