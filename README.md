@@ -42,6 +42,7 @@ change that CLI.
 - `standards/github-security.md`
 - `standards/release-distribution.md`
 - `standards/documentation.md`
+- `standards/agent-instructions.md`
 - `standards/shared-components.md`
 - `patterns/simple-cli.md`
 - `patterns/configured-cli.md`
