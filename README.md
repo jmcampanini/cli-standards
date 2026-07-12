@@ -40,6 +40,7 @@ change that CLI.
 - `standards/go-toolchain.md`
 - `standards/build-and-quality.md`
 - `standards/github-security.md`
+- `standards/github-pull-requests.md`
 - `standards/release-distribution.md`
 - `standards/documentation.md`
 - `standards/agent-instructions.md`
